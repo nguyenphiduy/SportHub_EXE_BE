@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>BidaPlatform.Application</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="FluentValidation" Version="11.0.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.0" />
+    <PackageReference Include="MediatR" Version="13.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="10.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BidaPlatform.Domain\BidaPlatform.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\Carts\**\*.cs" />
+    <Compile Remove="Models\Categories\**\*.cs" />
+    <Compile Remove="Models\Orders\**\*.cs" />
+    <Compile Remove="Models\Payments\**\*.cs" />
+    <Compile Remove="Models\ProductImage\**\*.cs" />
+    <Compile Remove="Models\Reviews\**\*.cs" />
+
+    <Compile Remove="UseCases\Carts\**\*.cs" />
+    <Compile Remove="UseCases\Categories\**\*.cs" />
+    <Compile Remove="UseCases\Orders\**\*.cs" />
+    <Compile Remove="UseCases\Payments\**\*.cs" />
+    <Compile Remove="UseCases\ProductImages\**\*.cs" />
+    <Compile Remove="UseCases\Products\**\*.cs" />
+    <Compile Remove="UseCases\Reviews\**\*.cs" />
+
+  </ItemGroup>
+
+</Project>

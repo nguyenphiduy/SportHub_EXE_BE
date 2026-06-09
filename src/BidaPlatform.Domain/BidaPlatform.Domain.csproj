@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>BidaPlatform.Domain</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\Cart.cs" />
+    <Compile Remove="Entities\CartItem.cs" />
+    <Compile Remove="Entities\Category.cs" />
+    <Compile Remove="Entities\Order.cs" />
+    <Compile Remove="Entities\OrderItem.cs" />
+    <Compile Remove="Entities\Payment.cs" />
+    <Compile Remove="Entities\Product.cs" />
+    <Compile Remove="Entities\ProductImage.cs" />
+    <Compile Remove="Entities\Review.cs" />
+
+    <Compile Remove="Interfaces\ICartItemRepository.cs" />
+    <Compile Remove="Interfaces\ICartRepository.cs" />
+    <Compile Remove="Interfaces\ICategoryRepository.cs" />
+    <Compile Remove="Interfaces\IOrderItemRepository.cs" />
+    <Compile Remove="Interfaces\IOrderRepository.cs" />
+    <Compile Remove="Interfaces\IPaymentGateway.cs" />
+    <Compile Remove="Interfaces\IPaymentRepository.cs" />
+    <Compile Remove="Interfaces\IProductImageRepository.cs" />
+    <Compile Remove="Interfaces\IProductRepository.cs" />
+    <Compile Remove="Interfaces\IReviewRepository.cs" />
+
+    <Compile Remove="Enums\OrderStatus.cs" />
+    <Compile Remove="Enums\PaymentMethod.cs" />
+    <Compile Remove="Enums\PaymentStatus.cs" />
+
+    <Compile Remove="ValueObjects\PaymentGatewayResult.cs" />
+  </ItemGroup>
+
+</Project>

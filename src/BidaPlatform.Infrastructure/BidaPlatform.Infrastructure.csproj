@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>BidaPlatform.Infrastructure</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BidaPlatform.Application\BidaPlatform.Application.csproj" />
+    <ProjectReference Include="..\BidaPlatform.Domain\BidaPlatform.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Configurations\CartConfiguration.cs" />
+    <Compile Remove="Configurations\CartItemConfiguration.cs" />
+    <Compile Remove="Configurations\CategoryConfiguration.cs" />
+    <Compile Remove="Configurations\OrderConfiguration.cs" />
+    <Compile Remove="Configurations\OrderItemConfiguration.cs" />
+    <Compile Remove="Configurations\PaymentConfiguration.cs" />
+    <Compile Remove="Configurations\PayOSOptions.cs" />
+    <Compile Remove="Configurations\ProductConfiguration.cs" />
+    <Compile Remove="Configurations\ProductImageConfiguration.cs" />
+    <Compile Remove="Configurations\ReviewConfiguration.cs" />
+
+    <Compile Remove="Repositories\CartItemRepository.cs" />
+    <Compile Remove="Repositories\CartRepository.cs" />
+    <Compile Remove="Repositories\CategoryRepository.cs" />
+    <Compile Remove="Repositories\OrderItemRepository.cs" />
+    <Compile Remove="Repositories\OrderRepository.cs" />
+    <Compile Remove="Repositories\PaymentRepository.cs" />
+    <Compile Remove="Repositories\ProductImageRepository.cs" />
+    <Compile Remove="Repositories\ProductRepository.cs" />
+    <Compile Remove="Repositories\ReviewRepository.cs" />
+
+    <Compile Remove="Jobs\PaymentCleanupService.cs" />
+    <Compile Remove="Services\Payments\**\*.cs" />
+  </ItemGroup>
+
+</Project>
