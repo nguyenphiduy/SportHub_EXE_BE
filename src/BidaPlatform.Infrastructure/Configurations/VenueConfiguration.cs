@@ -27,8 +27,7 @@ public class VenueConfiguration : IEntityTypeConfiguration<Venue>
         builder.Property(x => x.Status)
                .IsRequired()
                .HasConversion<string>()
-               .HasMaxLength(50)
-               .HasDefaultValue(BidaPlatform.Domain.Enums.VenueStatus.Pending);
+               .HasMaxLength(50);
 
         builder.Property(x => x.IsActive)
                .IsRequired()

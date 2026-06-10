@@ -132,6 +132,7 @@ public static class DbSeeder
             Address = "123 Duong ABC, Quan 1, TP.HCM",
             Phone = "0909123456",
             OwnerName = "Quan Ly Mot",
+            Status = VenueStatus.Approved,
             IsActive = true,
             CreatedAt = now,
             UpdatedAt = now
