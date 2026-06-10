@@ -23,44 +23,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
     .AddJsonFile("appsettings.Secrets.json", optional: true, reloadOnChange: true);
 
-// Map Render flat environment variables to ASP.NET Core structured configuration keys
-var renderConfig = new Dictionary<string, string?>();
-
-var dbConn = Environment.GetEnvironmentVariable("DB_CONNECTION") 
-             ?? Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
-if (!string.IsNullOrEmpty(dbConn))
-    renderConfig["ConnectionStrings:DefaultConnection"] = dbConn;
-
-var encKey = Environment.GetEnvironmentVariable("ENCRYPTION_KEY")
-             ?? Environment.GetEnvironmentVariable("Security__EncryptionKey");
-if (!string.IsNullOrEmpty(encKey))
-    renderConfig["Security:EncryptionKey"] = encKey;
-
-var jwtSecret = Environment.GetEnvironmentVariable("JWT_SECRET")
-                ?? Environment.GetEnvironmentVariable("Jwt__SecretKey");
-if (!string.IsNullOrEmpty(jwtSecret))
-    renderConfig["Jwt:SecretKey"] = jwtSecret;
-
-var emailUser = Environment.GetEnvironmentVariable("EMAIL_USERNAME")
-                ?? Environment.GetEnvironmentVariable("Email__Username");
-if (!string.IsNullOrEmpty(emailUser))
-    renderConfig["Email:Username"] = emailUser;
-
-var emailPass = Environment.GetEnvironmentVariable("EMAIL_PASSWORD")
-                ?? Environment.GetEnvironmentVariable("Email__Password");
-if (!string.IsNullOrEmpty(emailPass))
-    renderConfig["Email:Password"] = emailPass;
-
-var iotEnabled = Environment.GetEnvironmentVariable("IOT_ENABLED")
-                 ?? Environment.GetEnvironmentVariable("IoT__Enabled");
-if (!string.IsNullOrEmpty(iotEnabled))
-    renderConfig["IoT:Enabled"] = iotEnabled;
-
-if (renderConfig.Count > 0)
-{
-    builder.Configuration.AddInMemoryCollection(renderConfig);
-}
-
 // =====================================================
 // REGISTER SERVICES
 // =====================================================
