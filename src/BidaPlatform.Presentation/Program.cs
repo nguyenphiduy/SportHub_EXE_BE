@@ -64,6 +64,17 @@ if (renderConfig.Count > 0)
 // =====================================================
 // REGISTER SERVICES
 // =====================================================
+var dbConnectionStr = builder.Configuration.GetConnectionString("DefaultConnection");
+if (dbConnectionStr != null)
+{
+    var maskedCs = System.Text.RegularExpressions.Regex.Replace(dbConnectionStr, @"(?i)Password=[^;]+", "Password=******");
+    Console.WriteLine($"[Startup] Resolved ConnectionString: {maskedCs}");
+}
+else
+{
+    Console.WriteLine("[Startup] Resolved ConnectionString is NULL");
+}
+
 builder.Services.AddAppServices(builder.Configuration);
 builder.Services.AddSignalR();
 builder.Services.AddSingleton<IUserIdProvider, NameIdentifierUserIdProvider>();
